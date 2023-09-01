@@ -30,6 +30,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    outputs:
+      is-released: ${{ steps.action.outputs.is-released }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
