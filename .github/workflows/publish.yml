@@ -31,7 +31,7 @@ jobs:
         uses: ./.github/actions/setup
       - name: Publish package
         if: ${{ !inputs.pre-release }}
-        run: pnpm publish
+        run: pnpm publish --access public
       - name: Publish package (pre-release)
         if: ${{ inputs.pre-release }}
-        run: pnpm publish --tag next
+        run: pnpm publish --access public --tag next
