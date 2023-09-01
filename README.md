@@ -8,10 +8,10 @@ Provides a base ESLint configuration for TypeScript projects.
 
 ## Usage
 
-Add the dependency to the project with a package manager:
+Add the following dependencies to the project with a package manager:
 
 ```bash
-pnpm add --save-dev @cyberspace/eslint-config
+pnpm add --save-dev eslint @typescript-eslint/eslint-plugin @cyberspace/eslint-config
 ```
 
 Then extend the ESLint configuration:
