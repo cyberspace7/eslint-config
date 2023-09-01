@@ -45,4 +45,4 @@ jobs:
     if: needs.release.outputs.is-released
     uses: ./.github/workflows/publish.yml
     with:
-      pre-release: ${{ inputs.pre-release != "" }}
+      pre-release: ${{ inputs.pre-release != '' }}
