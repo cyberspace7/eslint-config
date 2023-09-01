@@ -1,6 +1,6 @@
 {
   "name": "@cyberspace7/eslint-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ESLint configuration for TypeScript projects",
   "keywords": [
     "eslint",
