@@ -1,0 +1,38 @@
+{
+  "name": "@cyberspace7/eslint-config",
+  "version": "0.0.1",
+  "description": "ESLint configuration for TypeScript projects",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "javascript",
+    "lint",
+    "typescript"
+  ],
+  "homepage": "https://github.com/cyberspace7/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/cyberspace7/eslint-config/issues",
+    "email": "contact@a60.dev"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Benjamin Guibert",
+    "email": "contact@bguibert.com",
+    "url": "https://github.com/benjamin-guibert"
+  },
+  "main": "index.cjs",
+  "scripts": {
+    "format": "prettier --write \"**/*.{cjs,md}\""
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "prettier": "^3.0.3"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 6.5.0",
+    "eslint": ">= 3"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^6.5.0"
+  }
+}

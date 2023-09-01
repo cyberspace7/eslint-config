@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  workflow_call:
+    inputs:
+      pre-release:
+        type: boolean
+        default: false
+        description: Publish as pre-release
+  workflow_dispatch:
+    inputs:
+      pre-release:
+        type: boolean
+        default: false
+        description: Publish as pre-release
+
+permissions:
+  contents: read
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Publish package
+        if: ${{ !inputs.pre-release }}
+        run: pnpm publish
+      - name: Publish package (pre-release)
+        if: ${{ inputs.pre-release }}
+        run: pnpm publish --tag next

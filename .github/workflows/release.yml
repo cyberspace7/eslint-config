@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      release-as:
+        type: string
+        description: Force the release version
+      pre-release:
+        type: choice
+        default: ""
+        description: Pre-release
+        options:
+          - ""
+          - alpha
+          - beta
+          - rc
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Execute action
+        id: action
+        uses: cyberspace7/release-action@v0.3.0
+        with:
+          release-as: ${{ inputs.release-as }}
+          pre-release: ${{ inputs.pre-release }}
+  publish:
+    name: Publish
+    needs: release
+    if: needs.release.outputs.is-released
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Publish package (release)
+        if: ${{ !inputs.pre-release }}
+        run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish package (pre-release)
+        if: ${{ inputs.pre-release }}
+        run: pnpm publish --tag next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
