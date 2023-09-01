@@ -45,7 +45,7 @@ jobs:
   publish:
     name: Publish
     needs: release
-    if: needs.release.outputs.is-released
+    if: ${{ needs.release.outputs.is-released == 'true' }}
     uses: ./.github/workflows/publish.yml
     with:
       pre-release: ${{ inputs.pre-release != '' }}
