@@ -43,17 +43,6 @@ jobs:
     name: Publish
     needs: release
     if: needs.release.outputs.is-released
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Publish package (release)
-        if: ${{ !inputs.pre-release }}
-        run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish package (pre-release)
-        if: ${{ inputs.pre-release }}
-        run: pnpm publish --tag next
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: ./.github/workflows/publish.yml
+    with:
+      pre-release: ${{ inputs.pre-release != "" }}
