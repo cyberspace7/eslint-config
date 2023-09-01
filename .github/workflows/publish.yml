@@ -34,7 +34,7 @@ jobs:
           echo "always-auth=true" >> .npmrc
       - name: Publish package
         if: ${{ !inputs.pre-release }}
-        run: pnpm publish --access public
+        run: pnpm publish --no-git-checks --access public
       - name: Publish package (pre-release)
         if: ${{ inputs.pre-release }}
-        run: pnpm publish --access public --tag next
+        run: pnpm publish --no-git-checks --access public --tag next
