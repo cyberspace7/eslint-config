@@ -1,6 +1,6 @@
 {
   "name": "@cyberspace7/eslint-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ESLint configuration for TypeScript projects",
   "keywords": [
     "eslint",
@@ -17,8 +17,8 @@
   "license": "MIT",
   "author": {
     "name": "Benjamin Guibert",
-    "email": "contact@bguibert.com",
-    "url": "https://github.com/benjamin-guibert"
+    "url": "https://github.com/benjamin-guibert",
+    "email": "contact@bguibert.com"
   },
   "main": "index.cjs",
   "scripts": {
