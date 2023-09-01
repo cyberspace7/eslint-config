@@ -8,6 +8,7 @@ runs:
       uses: pnpm/action-setup@v2
       with:
         version: 8
+        registry-url: "https://registry.npmjs.org"
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
@@ -15,4 +16,4 @@ runs:
         cache: "pnpm"
     - name: Install dependencies
       shell: bash
-      run: pnpm install --frozen-lockfile
+      run: pnpm ci
