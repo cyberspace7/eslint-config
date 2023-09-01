@@ -16,7 +16,13 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
-      - name: Setup project
-        uses: ./.github/actions/setup
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "pnpm"
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile
       - name: Run prettier
         run: pnpm prettier --check "**/*.{ts,tsx,md}"
