@@ -17,8 +17,8 @@
   "license": "MIT",
   "author": {
     "name": "Benjamin Guibert",
-    "url": "https://github.com/benjamin-guibert",
-    "email": "contact@bguibert.com"
+    "email": "contact@bguibert.com",
+    "url": "https://github.com/benjamin-guibert"
   },
   "main": "index.cjs",
   "scripts": {
