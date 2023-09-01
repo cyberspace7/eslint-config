@@ -8,7 +8,6 @@ before marking this PR as ready. -->
 - [ ] PR: Add notes and link issue(s) _if needed_
 - [ ] PR: Add assignees
 - [ ] PR: Add labels (`type: fix`, `type: feature`, `breaking`, `changelog-ignore`) _if needed_
-- [ ] Code: Update tests _if needed_
 - [ ] Code: Update documentation (`README`, ...) _if needed_
 
 ### Notes
