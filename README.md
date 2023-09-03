@@ -11,7 +11,7 @@ Provides a base ESLint configuration for TypeScript projects.
 Add the following dependencies to the project with a package manager:
 
 ```bash
-pnpm add --save-dev eslint @typescript-eslint/eslint-plugin @cyberspace/eslint-config
+pnpm add --save-dev eslint @typescript-eslint/eslint-plugin @cyberspace-7/eslint-config
 ```
 
 Then extend the ESLint configuration:
