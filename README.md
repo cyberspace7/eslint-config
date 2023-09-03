@@ -19,7 +19,7 @@ Then extend the ESLint configuration:
 ```javascript
 /** @type {import("eslint").Linter.Config} */
 const configuration = {
-  extends: ["@cyberspace7"],
+  extends: ["@cyberspace-7"],
 };
 
 module.exports = configuration;
