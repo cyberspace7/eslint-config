@@ -31,7 +31,7 @@ jobs:
         shell: bash
         run: |
           echo "registry=https://registry.npmjs.org/" > .npmrc
-          echo "//registry.npmjs.org/:_authToken=${secrets.NPM_TOKEN}" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
           echo "always-auth=true" >> .npmrc
       - name: Publish package
         if: ${{ !inputs.pre-release }}
